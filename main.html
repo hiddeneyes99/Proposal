@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>untoldcoding</title>
+    <link rel="stylesheet" href="Style3.css" />
+    <style>
+        /* Button Style */
+        #clickButton {
+            display: none; /* Initially hide the button */
+            position: fixed;
+            bottom: 20px; /* Position the button at the bottom */
+            left: 50%; /* Center the button horizontally */
+            transform: translateX(-50%); /* Center the button */
+            padding: 12px 25px;
+            font-size: 18px;
+            background-color: #ff7f50; /* Initial color */
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 30px; /* Round the edges of the button */
+            transition: background-color 0.5s ease, transform 0.3s ease; /* Smooth color change and size transition */
+            animation: colorChange 6s infinite; /* Animation to change colors smoothly */
+        }
+
+        /* Hover Effect: Color Changing */
+        #clickButton:hover {
+            background-color: #ff6347; /* Slightly lighter orange on hover */
+            transform: scale(1.1); /* Slightly enlarge the button on hover */
+        }
+
+        /* Active effect when button is clicked */
+        #clickButton:active {
+            background-color: #ff4500; /* Darker orange when clicked */
+            transform: scale(1); /* Reset the size when clicked */
+        }
+
+        /* Color Change Animation */
+        @keyframes colorChange {
+            0% {
+                background-color: #ff7f50; /* Rambo Color */
+            }
+            10% {
+                background-color: #ff6347; /* Lighter Orange */
+            }
+            20% {
+                background-color: #ff4500; /* Darker Orange */
+            }
+            30% {
+                background-color: #ff8c00; /* Another Orange Shade */
+            }
+            40% {
+                background-color: #ff1493; /* Deep Pink */
+            }
+            50% {
+                background-color: #ff6347; /* Lighter Red */
+            }
+            60% {
+                background-color: #32cd32; /* Lime Green */
+            }
+            70% {
+                background-color: #1e90ff; /* Dodger Blue */
+            }
+            80% {
+                background-color: #9932cc; /* Dark Orchid */
+            }
+            90% {
+                background-color: #ff1493; /* Deep Pink */
+            }
+            100% {
+                background-color: #ff7f50; /* Rambo Color */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Envelope Section -->
+    <div class="envelope">
+        <div class="back"></div>
+        <div class="letter">
+            <div class="heart"></div>
+            <div class="text">
+                <p>
+                    I want to say <br />
+                    many things but, <br />
+                    I can't express so I made <br />
+                    this for you
+                </p>
+                <a href="video.html">Click here</a>
+            </div>
+        </div>
+        <div class="front"></div>
+        <div class="top"></div>
+        <div class="shadow"></div>
+        <div class="text1">
+            <h2>Hey! Listen I Have Something For You</h2>
+        </div>
+    </div>
+
+    <!-- "Click Me" Button -->
+    <button id="clickButton" onclick="window.location.href='video.html'">
+        Click Me
+    </button>
+
+    <script>
+        // Show the button after the first click on the screen
+        document.body.addEventListener("click", function() {
+            document.getElementById("clickButton").style.display = "block";
+        });
+
+        // Prevent the body click event from triggering after the button is shown
+        document.getElementById("clickButton").addEventListener("click", function(event) {
+            event.stopPropagation(); // Prevent click from reaching the body
+        });
+    </script>
+</body>
+</html>
